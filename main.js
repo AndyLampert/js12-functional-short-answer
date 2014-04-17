@@ -1,12 +1,7 @@
-// Rewrite the pluralize function using the ternary operator:
-var pluralize = function (word, number) {
- if(number === 1) {
-  return word;
- }
- else {
-  return word + "s";
- }
-};
+var pluralize = function(word,number){
+	// evalutate and return that value
+	return (number === 1)? word : word + s;
+}
 
 // The first step in functional programming is to write as much of your code in pure functions as possible. After that, you can make your functions more 'functional' still by not letting them rely on global variables; instead pass all needed variables as arguments. This makes your function even more modular, just input/output.
 
