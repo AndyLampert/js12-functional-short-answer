@@ -16,18 +16,32 @@ var getVictimInfo = function() {
 
 var v1 = getVictimInfo();
 var v2 = getVictimInfo();
-console.log(v1);
 
-// want to use this so I can get brand new objects each time the request is made
-// if, for ex, I did console.log v1 and v2 separately, they will give unique values
-
-
-// alert('Thank you! Victim entered: \n' +
-//  victim.name + ", " +
-//  victim.phone + ", " +
-//  victim.street);
-
-// Write a function which removes falsey values from an array. A falsey value is one which evaluates to false when type coerced, which are the following:
+// Write a function which removes falsey values from an array.
+// A falsey value is one which evaluates to false when type coerced, which are the following:
 // 0, null, "" (empty string), undefined, NaN, false.
-
 // Write two versions of the function: one that uses side effects and one that is pure.ss
+
+// impure function
+// could make it way MORE impure if I did a destructive edit like slice
+var outputArr = [];
+var removeFalsy = function(inputArr) {
+	for(var i=0; i<inputArr.length; i++){
+		if(inputArr[i] !== false && inputArr[i] !== null && inputArr[i] !== undefined && inputArr[i] !== NaN && inputArr[i] !== 0 && inputArr[i] !== '') {
+			outputArr.push(inputArr[i]);
+		}
+	}
+	return outputArr;
+}
+
+// pure function
+var removeFalsy = function(inputArr) {
+	var outputArr = [];
+	for(var i=0; i<inputArr.length; i++){
+		if(inputArr[i] !== false && inputArr[i] !== null && inputArr[i] !== undefined && inputArr[i] !== NaN && inputArr[i] !== 0 && inputArr[i] !== '') {
+			outputArr.push(inputArr[i]);
+		}
+	}
+	return outputArr;
+}
+console.log(removeFalsy([1,'b',"",false,null,true]));
